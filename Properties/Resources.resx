@@ -118,7 +118,73 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="CyberpunkBalcony" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CyberpunkBalcony.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CyberPunkCafe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CyberPunkCafe.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CyberpunkElevator" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CyberpunkElevator.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CyberpunkNightRide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CyberpunkNightRide.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CyberpunkStandoff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CyberpunkStandoff.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CyberpunkSubway" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CyberpunkSubway.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CyberpunkTrollCave" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CyberpunkTrollCave.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DarkSoulsBorealValley" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkSoulsB.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="DarkSoulsFire" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DarkSoulsFire.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Duck" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Duck2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Earth" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Earth.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GlobeDots" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GlobeDots.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LastStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LastStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LonelyFire" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LonelyFire.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OverwatchA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OverwatchA.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OverwatchB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OverwatchB.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SandCastle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SandCastle.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SpaceBattle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SpaceBattle.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SpaceBattle2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SpaceBattle2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SpaceBattle3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SpaceBattle3.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SpaceshipCrash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SpaceshipCrash.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tavern" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tavern.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Wilds" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Wilds.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

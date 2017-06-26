@@ -9,10 +9,11 @@ namespace DesktopBackground
     public class BackgroundWallpaper
     {
         private MainForm Master;
-        private int UpdateInt;
         private string WallpaperPath;
         private Bitmap Wallpaper;
-        public bool DarkSoulsGif;
+        public Image Gif;
+        public bool GifState;
+        public string currentGif;
 
         public BackgroundWallpaper(MainForm master)
         {
@@ -26,34 +27,53 @@ namespace DesktopBackground
             }
         }
 
-        public void Update()
+        public void Reset()
         {
-            if (UpdateInt <= 0)
+            Update();
+            if(GifState)
             {
-                if (DarkSoulsGif)
+            }
+            else
+            {
+                string wp = Master.GetPathOfWallpaper();
+                if(wp != WallpaperPath)
                 {
-                    Master.DarkSoulsFire.Visible = true;
-                    Master.DarkSoulsFire.Location = new Point(0, 0);
-                    Master.DarkSoulsFire.Size = Master.ClientSize;
-                }
-                else
-                {
-                    string wp = Master.GetPathOfWallpaper();
-                    if (wp != WallpaperPath)
-                    {
-                        WallpaperPath = wp;
-                        Wallpaper = (Bitmap)Image.FromFile(wp);
-                        Master.Invalidate();
-                    }
-                    UpdateInt = 1000;
+                    WallpaperPath = wp;
+                    Wallpaper = (Bitmap)Image.FromFile(wp);
+                    Master.Invalidate();
                 }
             }
-            if (UpdateInt > 0) UpdateInt--;
         }
+
+        public void Update()
+        {
+            if (GifState) ImageAnimator.UpdateFrames();
+        }
+
+        public void ChangeGif(Image newGif)
+        {
+            if (Gif != null) ImageAnimator.StopAnimate(Gif, OnFrameChanged);
+            Gif = newGif;
+            ImageAnimator.Animate(Gif, OnFrameChanged);
+        }
+
+        public void OnFrameChanged(object o, EventArgs e)
+        {
+            Master.Invalidate();
+        }
+
 
         public void Draw(Graphics g)
         {
-            if (!DarkSoulsGif) g.DrawImage(Wallpaper, new Point(0, 0));
+            if(GifState)
+            {
+                if(currentGif != "Earth")
+                    g.DrawImage(Gif, Master.ScreenSelection.Bounds);
+                else
+                    g.DrawImage(Gif, new Rectangle(Master.ClientSize.Width / 2 - 360, Master.ClientSize.Height / 2 - 360, 720, 720));
+            }
+            if (!GifState) g.DrawImage(Wallpaper, Master.ClientRectangle);
+            else g.DrawRectangle(Pens.Black, Master.ClientRectangle);
         }
     }
 }

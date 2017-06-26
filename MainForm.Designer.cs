@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.Gametimer = new System.Windows.Forms.Timer(this.components);
             this.GameNotification = new System.Windows.Forms.NotifyIcon(this.components);
-            this.DarkSoulsFire = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.DarkSoulsFire)).BeginInit();
             this.SuspendLayout();
             // 
             // Gametimer
@@ -45,17 +43,6 @@
             this.GameNotification.Text = "ImmortalWall";
             this.GameNotification.Visible = true;
             // 
-            // DarkSoulsFire
-            // 
-            this.DarkSoulsFire.Image = global::DesktopBackground.Properties.Resources.DarkSoulsFire;
-            this.DarkSoulsFire.Location = new System.Drawing.Point(69, 70);
-            this.DarkSoulsFire.Name = "DarkSoulsFire";
-            this.DarkSoulsFire.Size = new System.Drawing.Size(100, 50);
-            this.DarkSoulsFire.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.DarkSoulsFire.TabIndex = 0;
-            this.DarkSoulsFire.TabStop = false;
-            this.DarkSoulsFire.Visible = false;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -63,7 +50,6 @@
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(284, 262);
             this.ControlBox = false;
-            this.Controls.Add(this.DarkSoulsFire);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
@@ -72,7 +58,6 @@
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.MainForm_Paint);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseClick);
             this.Resize += new System.EventHandler(this.MainForm_Resize);
-            ((System.ComponentModel.ISupportInitialize)(this.DarkSoulsFire)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -81,7 +66,6 @@
 
         private System.Windows.Forms.Timer Gametimer;
         private System.Windows.Forms.NotifyIcon GameNotification;
-        public System.Windows.Forms.PictureBox DarkSoulsFire;
     }
 }
 

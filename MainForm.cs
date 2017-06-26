@@ -52,17 +52,10 @@ namespace DesktopBackground
         BackgroundStarfield Starfield;
         BackgroundWallpaper Wallpaper;
         BackgroundPong Pong;
+        
+        public Screen ScreenSelection = Screen.PrimaryScreen;
 
-        Rectangle ControlPanelOpenRect;
-        Point[] ControlPanelOpenList;
-        Point[] ControlPanelOpenListInvert;
-        bool ControlPanelOpened;
-        Rectangle ControlPanelFull;
-        Rectangle ControlPanelStarfieldButton;
-        Rectangle ControlPanelWallpaperButton;
-        Rectangle ControlPanelPongButton;
-
-        Rectangle ControlPanelExitButton;
+        Dictionary<string, Bitmap> Gifs;
 
         string State = "wall";
 
@@ -70,6 +63,31 @@ namespace DesktopBackground
         {
             InitializeComponent();
             Gametimer.Start();
+
+            Gifs = new Dictionary<string, Bitmap>();
+            Gifs.Add("CyberpunkBalcony", Properties.Resources.CyberpunkBalcony);
+            Gifs.Add("CyberPunkCafe", Properties.Resources.CyberPunkCafe);
+            Gifs.Add("CyberpunkElevator", Properties.Resources.CyberpunkElevator);
+            Gifs.Add("CyberpunkNightRide", Properties.Resources.CyberpunkNightRide);
+            Gifs.Add("CyberpunkStandoff", Properties.Resources.CyberpunkStandoff);
+            Gifs.Add("CyberpunkSubway", Properties.Resources.CyberpunkSubway);
+            Gifs.Add("CyberpunkTrollCave", Properties.Resources.CyberpunkTrollCave);
+            Gifs.Add("DarkSoulsBorealValley", Properties.Resources.DarkSoulsBorealValley);
+            Gifs.Add("DarkSoulsFire", Properties.Resources.DarkSoulsFire);
+            Gifs.Add("Duck", Properties.Resources.Duck);
+            Gifs.Add("Earth", Properties.Resources.Earth);
+            Gifs.Add("GlobeDots", Properties.Resources.GlobeDots);
+            Gifs.Add("LastStand", Properties.Resources.LastStand);
+            Gifs.Add("LonelyFire", Properties.Resources.LonelyFire);
+            Gifs.Add("OverwatchA", Properties.Resources.OverwatchA);
+            Gifs.Add("OverwatchB", Properties.Resources.OverwatchB);
+            Gifs.Add("SandCastle", Properties.Resources.SandCastle);
+            Gifs.Add("SpaceBattle", Properties.Resources.SpaceBattle);
+            Gifs.Add("SpaceBattle2", Properties.Resources.SpaceBattle2);
+            Gifs.Add("SpaceBattle3", Properties.Resources.SpaceBattle3);
+            Gifs.Add("SpaceshipCrash", Properties.Resources.SpaceshipCrash);
+            Gifs.Add("Tavern", Properties.Resources.Tavern);
+            Gifs.Add("Wilds", Properties.Resources.Wilds);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -78,8 +96,23 @@ namespace DesktopBackground
             Wallpaper = new BackgroundWallpaper(this);
             Pong = new BackgroundPong(this);
             GameNotification.ContextMenu = new ContextMenu();
+            MenuItem ScreenFolder = new MenuItem("Screen Select:");
+            GameNotification.ContextMenu.MenuItems.Add(ScreenFolder);
+            
+            for(int x = 0; x < Screen.AllScreens.Length; x++)
+            {
+                ScreenFolder.MenuItems.Add(x.ToString(), CM_ScreenSelectionClick);
+            }
+
+            MenuItem GifFolder = new MenuItem("Gif Background Selection:");
+            GameNotification.ContextMenu.MenuItems.Add(GifFolder);
+            foreach(string key in Gifs.Keys)
+            {
+                GifFolder.MenuItems.Add(key, CM_GifClick);
+            }
+
+
             GameNotification.ContextMenu.MenuItems.Add("Wallpaper Mode", new EventHandler(CM_WallpaperModeClick));
-            GameNotification.ContextMenu.MenuItems.Add("Dark Souls Fire Gif", new EventHandler(CM_DarksoulsFireClick));
             GameNotification.ContextMenu.MenuItems.Add("Starfield Mode", new EventHandler(CM_StarfieldModeClick));
             GameNotification.ContextMenu.MenuItems.Add("Pong Mode", new EventHandler(CM_PongModeClick));
             GameNotification.ContextMenu.MenuItems.Add("Exit", new EventHandler(CM_ExitClick));
@@ -88,21 +121,13 @@ namespace DesktopBackground
 
             this.Location = new Point(0, 0);
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
-            ControlPanelOpenRect = new Rectangle(CenterScreen.X - 10, Screen.PrimaryScreen.WorkingArea.Bottom - 20, 20, 10);
-            ControlPanelOpenList = new Point[] { new Point(ControlPanelOpenRect.Left, ControlPanelOpenRect.Bottom), new Point(ControlPanelOpenRect.Left + ControlPanelOpenRect.Width / 2, ControlPanelOpenRect.Top), new Point(ControlPanelOpenRect.Right, ControlPanelOpenRect.Bottom), new Point(ControlPanelOpenRect.Left, ControlPanelOpenRect.Bottom) };
-            ControlPanelOpenListInvert = new Point[] { new Point(ControlPanelOpenRect.Left, ControlPanelOpenRect.Top), new Point(ControlPanelOpenRect.Left + ControlPanelOpenRect.Width / 2, ControlPanelOpenRect.Bottom), new Point(ControlPanelOpenRect.Right, ControlPanelOpenRect.Top), new Point(ControlPanelOpenRect.Left, ControlPanelOpenRect.Top) };
-            ControlPanelFull = new Rectangle(CenterScreen.X - 120, Screen.PrimaryScreen.WorkingArea.Bottom - 84, 240, 58);
-            ControlPanelWallpaperButton = new Rectangle(ControlPanelFull.X + 4, ControlPanelFull.Y + 4, ControlPanelFull.Height - 8, ControlPanelFull.Height - 8);
-            ControlPanelStarfieldButton = new Rectangle(ControlPanelWallpaperButton.Right + 8, ControlPanelFull.Y + 4, ControlPanelFull.Height - 8, ControlPanelFull.Height - 8);
-            ControlPanelPongButton = new Rectangle(ControlPanelStarfieldButton.Right + 8, ControlPanelFull.Y + 4, ControlPanelFull.Height - 8, ControlPanelFull.Height - 8);
-
-            ControlPanelExitButton = new Rectangle(ControlPanelFull.Right - 4 - (ControlPanelFull.Height - 8), ControlPanelFull.Y + 4, ControlPanelFull.Height - 8, ControlPanelFull.Height - 8);
+            SetWindowPos(Handle, HWND_BOTTOM, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_NOACTIVATE);
         }
 
         private void Gametimer_Tick(object sender, EventArgs e)
         {
             //Moves the window to the bottom layer
-            SetWindowPos(Handle, HWND_BOTTOM, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_NOACTIVATE);
+            //SetWindowPos(Handle, HWND_BOTTOM, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_NOACTIVATE);
             if (WindowState == FormWindowState.Minimized)
             {
                 WindowState = FormWindowState.Maximized;
@@ -129,6 +154,7 @@ namespace DesktopBackground
             {
                 WindowState = FormWindowState.Normal;
             }
+            Reset();
         }
 
         private void MainForm_Paint(object sender, PaintEventArgs e)
@@ -150,23 +176,6 @@ namespace DesktopBackground
                 }
                 StringFormat sF = new StringFormat();
                 sF.Alignment = StringAlignment.Center; sF.LineAlignment = StringAlignment.Center;
-                //Arrow
-                if (ControlPanelOpened) e.Graphics.DrawLines(Pens.White, ControlPanelOpenListInvert); else e.Graphics.DrawLines(Pens.White, ControlPanelOpenList);
-                //Panel Full
-                if (ControlPanelOpened) e.Graphics.FillRectangle(Brushes.DarkGray, ControlPanelFull);
-                //Starfield
-                if (ControlPanelOpened) e.Graphics.FillRectangle(Brushes.Gray, ControlPanelStarfieldButton);
-                if (ControlPanelOpened) e.Graphics.DrawString("St", SystemFonts.MenuFont, Brushes.White, ControlPanelStarfieldButton, sF);
-                //Wallpaper
-                if (ControlPanelOpened) e.Graphics.FillRectangle(Brushes.Gray, ControlPanelWallpaperButton);
-                if (ControlPanelOpened) e.Graphics.DrawString("Wl", SystemFonts.MenuFont, Brushes.White, ControlPanelWallpaperButton, sF);
-                //Pong
-                if (ControlPanelOpened) e.Graphics.FillRectangle(Brushes.Gray, ControlPanelPongButton);
-                if (ControlPanelOpened) e.Graphics.DrawString("Pn", SystemFonts.MenuFont, Brushes.White, ControlPanelPongButton, sF);
-
-                //Exit
-                if (ControlPanelOpened) e.Graphics.FillRectangle(Brushes.Gray, ControlPanelExitButton);
-                if (ControlPanelOpened) e.Graphics.DrawString("Ex", SystemFonts.MenuFont, Brushes.White, ControlPanelExitButton, sF);
             }
             catch 
             {
@@ -177,35 +186,16 @@ namespace DesktopBackground
             }
         }
 
+        public void Reset()
+        {
+            Location = ScreenSelection.Bounds.Location;
+            Size = ScreenSelection.WorkingArea.Size;
+            if (Wallpaper != null && State == "wall") Wallpaper.Reset();
+            Invalidate();
+        }
+
         private void MainForm_MouseClick(object sender, MouseEventArgs e)
         {
-            if (ControlPanelOpenRect.ContainsPoint(this.PointToClient(e.Location)))
-            {
-                ControlPanelOpened = !ControlPanelOpened;
-                this.Invalidate();
-            }
-            if (ControlPanelOpened)
-            {
-                if (ControlPanelWallpaperButton.ContainsPoint(this.PointToClient(e.Location)))
-                {
-                    State = "wall";
-                    this.Invalidate();
-                }
-                if (ControlPanelStarfieldButton.ContainsPoint(this.PointToClient(e.Location)))
-                {
-                    State = "star";
-                    this.Invalidate();
-                }
-                if (ControlPanelPongButton.ContainsPoint(this.PointToClient(e.Location)))
-                {
-                    State = "pong";
-                    this.Invalidate();
-                }
-                if (ControlPanelExitButton.ContainsPoint(this.PointToClient(e.Location)))
-                {
-                    Application.Exit();
-                }
-            }
         }
 
         public string GetPathOfWallpaper()
@@ -227,20 +217,40 @@ namespace DesktopBackground
         private void CM_WallpaperModeClick(object sender, EventArgs e)
         {
             State = "wall";
-            Wallpaper.DarkSoulsGif = false;
+            Wallpaper.currentGif = "";
+            Wallpaper.GifState = false;
+            DoubleBuffered = false;
+            Gametimer.Interval = 1000;
+            Reset();
         }
-        private void CM_DarksoulsFireClick(object sender, EventArgs e)
+        private void CM_GifClick(object sender, EventArgs e)
         {
             State = "wall";
-            Wallpaper.DarkSoulsGif = true;
+            Wallpaper.currentGif = ((MenuItem)sender).Text;
+            Wallpaper.GifState = true;
+            Wallpaper.ChangeGif(Gifs[((MenuItem)sender).Text]);
+            DoubleBuffered = true;
+            Gametimer.Interval = 10;
+            Reset();
+        }
+        private void CM_ScreenSelectionClick(object sender, EventArgs e)
+        {
+            ScreenSelection = Screen.AllScreens[int.Parse(((MenuItem)sender).Text)];
+            Reset();
         }
         private void CM_StarfieldModeClick(object sender, EventArgs e)
         {
+            DoubleBuffered = true;
+            Gametimer.Interval = 10;
             State = "star";
+            Reset();
         }
         private void CM_PongModeClick(object sender, EventArgs e)
         {
+            DoubleBuffered = true;
+            Gametimer.Interval = 10;
             State = "pong";
+            Reset();
         }
     }
 

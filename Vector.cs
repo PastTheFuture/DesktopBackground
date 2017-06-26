@@ -92,6 +92,8 @@ namespace DesktopBackground
 
         public Point AsPoint
         { get { return new Point((int)px, (int)py); } }
+        public PointF AsPointF
+        { get { return new PointF((float)px, (float)py); } }
 
         public static PointD operator +(PointD pa, PointD pb)
         {

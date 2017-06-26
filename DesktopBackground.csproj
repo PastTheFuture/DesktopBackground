@@ -85,6 +85,72 @@
   <ItemGroup>
     <None Include="Resources\DarkSoulsFire.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Duck2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GlobeDots.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Earth.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CyberpunkBalcony.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CyberPunkCafe.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CyberpunkElevator.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CyberpunkNightRide.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CyberpunkStandoff.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CyberpunkSubway.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CyberpunkTrollCave.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DarkSoulsB.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LastStand.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LonelyFire.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OverwatchA.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OverwatchB.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SandCastle.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SpaceBattle.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SpaceBattle2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SpaceBattle3.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SpaceshipCrash.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tavern.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wilds.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
