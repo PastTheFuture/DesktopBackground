@@ -133,6 +133,16 @@ namespace DesktopBackground.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DarkSoulsBalcony {
+            get {
+                object obj = ResourceManager.GetObject("DarkSoulsBalcony", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap DarkSoulsBorealValley {
             get {
                 object obj = ResourceManager.GetObject("DarkSoulsBorealValley", resourceCulture);
@@ -143,9 +153,29 @@ namespace DesktopBackground.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DarkSoulsCave {
+            get {
+                object obj = ResourceManager.GetObject("DarkSoulsCave", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap DarkSoulsFire {
             get {
                 object obj = ResourceManager.GetObject("DarkSoulsFire", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DarkSoulsFire2 {
+            get {
+                object obj = ResourceManager.GetObject("DarkSoulsFire2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -266,6 +296,16 @@ namespace DesktopBackground.Properties {
         internal static System.Drawing.Bitmap SpaceshipCrash {
             get {
                 object obj = ResourceManager.GetObject("SpaceshipCrash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Swamp {
+            get {
+                object obj = ResourceManager.GetObject("Swamp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

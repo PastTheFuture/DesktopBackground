@@ -72,8 +72,11 @@ namespace DesktopBackground
             Gifs.Add("CyberpunkStandoff", Properties.Resources.CyberpunkStandoff);
             Gifs.Add("CyberpunkSubway", Properties.Resources.CyberpunkSubway);
             Gifs.Add("CyberpunkTrollCave", Properties.Resources.CyberpunkTrollCave);
+            Gifs.Add("DarkSoulsBalcony", Properties.Resources.DarkSoulsBalcony);
+            Gifs.Add("DarkSoulsCave", Properties.Resources.DarkSoulsCave);
             Gifs.Add("DarkSoulsBorealValley", Properties.Resources.DarkSoulsBorealValley);
             Gifs.Add("DarkSoulsFire", Properties.Resources.DarkSoulsFire);
+            Gifs.Add("DarkSoulsFire2", Properties.Resources.DarkSoulsFire2);
             Gifs.Add("Duck", Properties.Resources.Duck);
             Gifs.Add("Earth", Properties.Resources.Earth);
             Gifs.Add("GlobeDots", Properties.Resources.GlobeDots);
@@ -86,6 +89,7 @@ namespace DesktopBackground
             Gifs.Add("SpaceBattle2", Properties.Resources.SpaceBattle2);
             Gifs.Add("SpaceBattle3", Properties.Resources.SpaceBattle3);
             Gifs.Add("SpaceshipCrash", Properties.Resources.SpaceshipCrash);
+            Gifs.Add("Swamp", Properties.Resources.Swamp);
             Gifs.Add("Tavern", Properties.Resources.Tavern);
             Gifs.Add("Wilds", Properties.Resources.Wilds);
         }
